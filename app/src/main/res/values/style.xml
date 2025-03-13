@@ -19,4 +19,12 @@
         <item name="android:textColor">@color/white</item>
     </style>
 
+    <style name="MenuItemTextStyle" parent="TextAppearance.AppCompat.Body1">
+        <item name="android:textColor">@color/Color5_claro</item>
+    </style>
+
+    <style name="NavigationViewStyle" parent="Widget.Design.NavigationView">
+        <item name="itemTextAppearance">@style/MenuItemTextStyle</item>
+        <item name="itemTextColor">@color/Color5_claro</item>
+    </style>
 </resources>

@@ -15,5 +15,17 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
+
+        val brnOlvidoContraseña = findViewById<Button>(R.id.button3)
+        brnOlvidoContraseña.setOnClickListener {
+            val intent = Intent(this, ForgotPasswordActivity::class.java)
+            startActivity(intent)
+        }
+
+        val btnRegistrarse = findViewById<Button>(R.id.button_registrarse)
+        btnRegistrarse.setOnClickListener {
+            val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
     }
 }

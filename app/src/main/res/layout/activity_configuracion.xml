@@ -1,298 +1,322 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/Color3_oscuro"
-    tools:context=".MainActivity">
-
-    <TextView
-        android:id="@+id/crear_alarma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:text="Crear alarma"
-        android:textAlignment="center"
-        android:textColor="@color/Color5_claro"
-        android:textSize="32sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/nombrealarma"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/nombrealarma"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:paddingStart="15dp"
-        android:text="Nombre de la alarma"
-        android:textColor="@color/Color3_claro"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/nombrealarmaentrada"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/crear_alarma" />
-
-    <EditText
-        android:id="@+id/nombrealarmaentrada"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/borde_nombre_alarma"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textEmailAddress"
-        android:minWidth="145dp"
-        android:minHeight="56dp"
-        android:text="Alarma uno"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        android:paddingStart="20dp"
-        app:layout_constraintBottom_toBottomOf="@id/cajitas"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombrealarma"
-        app:layout_constraintWidth_min="100dp" />
+    tools:context=".ConfiguracionActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/cajitas"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/bordehoradias"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/nombrealarmaentrada">
+        android:layout_height="match_parent"
+        android:background="@color/Color3_oscuro">
 
-        <!-- Hora -->
         <TextView
-            android:id="@+id/tvHora"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/tarjetashora"
-            android:gravity="center"
-            android:text="05"
-            android:textColor="@android:color/white"
-            android:textSize="36sp"
+            android:id="@+id/crear_alarma"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="90dp"
+            android:text="Crear alarma"
+            android:textAlignment="center"
+            android:textColor="@color/Color5_claro"
+            android:textSize="32sp"
             android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/tvSeparador"
+            app:layout_constraintBottom_toTopOf="@id/nombrealarma"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvSeparador"
+            android:id="@+id/nombrealarma"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="10dp"
-            android:gravity="center"
-            android:text=":"
-            android:textColor="@android:color/black"
-            android:textSize="40sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/tvMinuto"
-            app:layout_constraintEnd_toStartOf="@id/tvMinuto"
-            app:layout_constraintStart_toEndOf="@id/tvHora"
-            app:layout_constraintTop_toTopOf="@id/tvMinuto" />
-
-        <TextView
-            android:id="@+id/tvMinuto"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="10dp"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:background="@drawable/tarjetashora"
-            android:gravity="center"
-            android:text="00"
-            android:textColor="@android:color/white"
-            android:textSize="36sp"
-            android:textStyle="bold"
-            app:layout_constraintEnd_toStartOf="@id/btnAM"
-            app:layout_constraintStart_toEndOf="@id/tvSeparador"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:text="Hora"
+            android:paddingStart="15dp"
+            android:text="Nombre de la alarma"
             android:textColor="@color/Color3_claro"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/tvHora"
-            app:layout_constraintTop_toBottomOf="@+id/tvHora" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
-            android:text="Minuto"
-            android:textColor="@color/Color3_claro"
-            android:textSize="16sp"
-            app:layout_constraintStart_toStartOf="@id/tvMinuto"
-            app:layout_constraintTop_toBottomOf="@id/tvMinuto" />
-
-
-        <TextView
-            android:id="@+id/btnAM"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/bordeam"
-            android:gravity="center"
-            android:minWidth="52dp"
-            android:text="AM"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/btnPM"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvMinuto"
-            app:layout_constraintTop_toTopOf="@id/tvMinuto" />
+            app:layout_constraintBottom_toTopOf="@id/nombrealarmaentrada"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/crear_alarma" />
 
-        <TextView
-            android:id="@+id/btnPM"
-            android:layout_width="wrap_content"
+        <EditText
+            android:id="@+id/nombrealarmaentrada"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:background="@drawable/bordepm"
-            android:gravity="center"
-            android:minWidth="52dp"
-            android:text="PM"
-            android:textColor="@android:color/white"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toBottomOf="@id/tvMinuto"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/borde_nombre_alarma"
+            android:fontFamily="sans-serif-medium"
+            android:inputType="textEmailAddress"
+            android:minWidth="145dp"
+            android:minHeight="56dp"
+            android:text="Alarma uno"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:paddingStart="20dp"
+            app:layout_constraintBottom_toBottomOf="@id/cajitas"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/tvMinuto"
-            app:layout_constraintTop_toBottomOf="@+id/btnAM" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nombrealarma"
+            app:layout_constraintWidth_min="100dp" />
 
-        <TextView
-            android:id="@+id/days"
-            android:layout_width="wrap_content"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cajitas"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
             android:layout_marginTop="20dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/bordedays"
-            android:gravity="center"
-            android:text="  S      M      T      W      T      F      S  "
-            android:textColor="@android:color/white"
-            android:textSize="18sp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/bordehoradias"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/nombrealarmaentrada">
+
+            <TextView
+                android:id="@+id/tvHora"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/tarjetashora"
+                android:gravity="center"
+                android:text="05"
+                android:textColor="@android:color/white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/tvSeparador"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tvSeparador"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:gravity="center"
+                android:text=":"
+                android:textColor="@android:color/black"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvMinuto"
+                app:layout_constraintEnd_toStartOf="@id/tvMinuto"
+                app:layout_constraintStart_toEndOf="@id/tvHora"
+                app:layout_constraintTop_toTopOf="@id/tvMinuto" />
+
+            <TextView
+                android:id="@+id/tvMinuto"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/tarjetashora"
+                android:gravity="center"
+                android:text="00"
+                android:textColor="@android:color/white"
+                android:textSize="36sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toStartOf="@id/btnAM"
+                app:layout_constraintStart_toEndOf="@id/tvSeparador"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="Hora"
+                android:textColor="@color/Color3_claro"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/tvHora"
+                app:layout_constraintTop_toBottomOf="@+id/tvHora" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="3dp"
+                android:text="Minuto"
+                android:textColor="@color/Color3_claro"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@id/tvMinuto"
+                app:layout_constraintTop_toBottomOf="@id/tvMinuto" />
+
+            <TextView
+                android:id="@+id/btnAM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordeam"
+                android:gravity="center"
+                android:minWidth="52dp"
+                android:text="AM"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/btnPM"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvMinuto"
+                app:layout_constraintTop_toTopOf="@id/tvMinuto" />
+
+            <TextView
+                android:id="@+id/btnPM"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bordepm"
+                android:gravity="center"
+                android:minWidth="52dp"
+                android:text="PM"
+                android:textColor="@android:color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@id/tvMinuto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/tvMinuto"
+                app:layout_constraintTop_toBottomOf="@+id/btnAM" />
+
+            <TextView
+                android:id="@+id/days"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/bordedays"
+                android:gravity="center"
+                android:text="  S      M      T      W      T      F      S  "
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@id/tvHora"
+                app:layout_constraintTop_toBottomOf="@id/textView" />
+
+            <TextView
+                android:id="@+id/dias"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Días"
+                android:textColor="@color/Color3_claro"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="@id/days"
+                app:layout_constraintStart_toStartOf="@id/days"
+                app:layout_constraintTop_toBottomOf="@id/days" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.slider.Slider
+            android:id="@+id/material_slider"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:value="5"
+            android:valueFrom="0"
+            android:valueTo="20"
+            app:labelBehavior="visible"
+            app:labelStyle="@style/CustomSliderLabel"
+            app:layout_constraintBottom_toTopOf="@id/temperatura"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/cajitas"
+            app:thumbColor="@color/Color2"
+            app:trackColor="@color/Color4" />
+
+        <TextView
+            android:id="@+id/temperatura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:paddingStart="15dp"
+            android:text="Temperatura"
+            android:textColor="@color/Color3_claro"
+            android:textSize="15sp"
             android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/temperaturaentrada"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/material_slider" />
+
+        <EditText
+            android:id="@+id/temperaturaentrada"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:background="@drawable/borde_nombre_alarma"
+            android:fontFamily="sans-serif-medium"
+            android:inputType="textEmailAddress"
+            android:minWidth="145dp"
+            android:minHeight="56dp"
+            android:paddingStart="20dp"
+            android:text="≥ 5                                      °C"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/temperatura"
+            app:layout_constraintWidth_min="100dp" />
+
+        <Button
+            android:id="@+id/cancelar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/Color3"
+            android:minHeight="50dp"
+            android:text="Cancelar"
+            android:textColor="@color/Color5_claro"
+            android:textSize="14sp"
+            app:cornerRadius="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/guardar"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/guardar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="40dp"
+            android:layout_marginBottom="50dp"
+            android:backgroundTint="@color/Color5_claro"
+            android:minHeight="50dp"
+            android:text="Guardar"
+            android:textColor="@color/Color1_oscuro"
+            android:textSize="14sp"
+            app:cornerRadius="100dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@id/tvHora"
-            app:layout_constraintTop_toBottomOf="@id/textView" />
+            app:layout_constraintStart_toEndOf="@id/cancelar" />
 
-        <TextView
-            android:id="@+id/dias"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Días"
-            android:textColor="@color/Color3_claro"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="@id/days"
-            app:layout_constraintStart_toStartOf="@id/days"
-            app:layout_constraintTop_toBottomOf="@id/days" />
-
+        <Button
+            android:id="@+id/menu_button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_margin="16dp"
+            android:background="@drawable/menu_icon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <com.google.android.material.slider.Slider
-        android:id="@+id/material_slider"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:layout_marginEnd="30dp"
-        android:value="5"
-        android:valueFrom="0"
-        android:valueTo="20"
-        app:labelBehavior="visible"
-        app:labelStyle="@style/CustomSliderLabel"
-        app:layout_constraintBottom_toTopOf="@id/temperatura"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cajitas"
-        app:thumbColor="@color/Color2"
-        app:trackColor="@color/Color4" />
-
-    <TextView
-        android:id="@+id/temperatura"
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="20dp"
-        android:paddingStart="15dp"
-        android:text="Temperatura"
-        android:textColor="@color/Color3_claro"
-        android:textSize="15sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@id/temperaturaentrada"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/material_slider" />
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:fitsSystemWindows="true"
+        android:background="@color/Color3_oscuro"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer_menu"
+        app:itemTextAppearance="@style/MenuItemTextStyle"
+        app:itemBackground="@drawable/nav_item_background"
+        app:itemTextColor="@color/Color5_claro" />
 
-    <EditText
-        android:id="@+id/temperaturaentrada"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="40dp"
-        android:background="@drawable/borde_nombre_alarma"
-        android:fontFamily="sans-serif-medium"
-        android:inputType="textEmailAddress"
-        android:minWidth="145dp"
-        android:minHeight="56dp"
-        android:paddingStart="20dp"
-        android:text="≥ 5                                      °C"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/temperatura"
-        app:layout_constraintWidth_min="100dp" />
-
-    <Button
-        android:id="@+id/cancelar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@color/Color3"
-        android:minHeight="50dp"
-        android:text="Cancelar"
-        android:textColor="@color/Color5_claro"
-        android:textSize="14sp"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/guardar"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/guardar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="50dp"
-        android:backgroundTint="@color/Color5_claro"
-        android:minHeight="50dp"
-        android:text="Guardar"
-        android:textColor="@color/Color1_oscuro"
-        android:textSize="14sp"
-        app:cornerRadius="100dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/cancelar" />
-
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

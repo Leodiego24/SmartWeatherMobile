@@ -1,43 +1,42 @@
 package com.ux.smartweather
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
 import android.widget.Button
+import android.widget.EditText
+import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
-import com.google.android.material.slider.Slider
+import java.util.Calendar
 
-class ConfiguracionActivity : AppCompatActivity() {
+class HistorialActivity : AppCompatActivity() {
     private lateinit var drawerLayout: DrawerLayout
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_configuracion)
+        enableEdgeToEdge()
+        setContentView(R.layout.activity_historial)
 
-        // Referencia al slider
-        val slider = findViewById<Slider>(R.id.material_slider)
+        val fechaDesde = findViewById<EditText>(R.id.fechadesde)
+        val fechaHasta = findViewById<EditText>(R.id.fechahasta)
 
-        // Agregar el Listener para mostrar la etiqueta flotante con el valor
-        slider.addOnChangeListener { _, value, _ ->
-            slider.setLabelFormatter { "%.0f".format(value) } // Muestra el valor sin decimales
+        fechaDesde.setOnClickListener {
+            showDatePickerDialog(fechaDesde)
         }
 
-        // Referencia a los botones
-        val btnCancelar = findViewById<Button>(R.id.cancelar)
-        val btnGuardar = findViewById<Button>(R.id.guardar)
-
-        // Al hacer clic en "Cancelar" vuelve a la pantalla principal
-        btnCancelar.setOnClickListener {
-            finish() // Cierra esta actividad y vuelve atrás
+        fechaHasta.setOnClickListener {
+            showDatePickerDialog(fechaHasta)
         }
 
-        // Al hacer clic en "Guardar" vuelve a la pantalla principal
+
+        val btnGuardar = findViewById<Button>(R.id.boton20)
         btnGuardar.setOnClickListener {
             val alertDialog = AlertDialog.Builder(this)
-                .setMessage("Guardado")
+                .setMessage("Generado")
                 .setCancelable(false)
                 .create()
             alertDialog.show()
@@ -45,11 +44,12 @@ class ConfiguracionActivity : AppCompatActivity() {
             // Esperar 10 segundos y redirigir a la pantalla de inicio de sesión
             Handler(Looper.getMainLooper()).postDelayed({
                 alertDialog.dismiss()
-                val intent = Intent(this, HomeActivity::class.java)
+                val intent = Intent(this, HistorialActivity::class.java)
                 startActivity(intent)
                 finish()
             }, 5000)
         }
+
 
         drawerLayout = findViewById(R.id.drawer_layout)
         val menuButton: Button = findViewById(R.id.menu_button)
@@ -76,6 +76,25 @@ class ConfiguracionActivity : AppCompatActivity() {
             drawerLayout.closeDrawer(navView)
             true
         }
+    }
+
+    private fun showDatePickerDialog(editText: EditText) {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        val month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
+
+        val datePickerDialog = DatePickerDialog(
+            this,
+            { _, selectedYear, selectedMonth, selectedDay ->
+                val selectedDate = "$selectedDay/${selectedMonth + 1}/$selectedYear"
+                editText.setText(selectedDate)
+            },
+            year,
+            month,
+            day
+        )
+        datePickerDialog.show()
     }
 
     private fun showLogoutConfirmationDialog() {

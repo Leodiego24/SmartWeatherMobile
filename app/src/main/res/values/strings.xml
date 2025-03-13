@@ -19,4 +19,5 @@
     <string name="alarmaTrestemp">≥ 10 °C</string>
     <string name="crearalarma">Crear alarma</string>
     <string name="nombredealarma">Nombre de la alarma</string>
+    <string name="historial_de_alarmas">Historial de Alarmas</string>
 </resources>
